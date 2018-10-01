@@ -1,0 +1,78 @@
+//main: style.less
+
+@headerBG: #41b3a3;
+@logoBG: #41b3a3;
+@headerText: white;
+@activeNav: #4ABDAC;
+
+.navbar {
+  background-color: @headerBG; position: absolute;
+  width: 100%; height: 80px; z-index: 5;
+  .fas {line-height: 80px;}
+  .nav-logo {
+    width: 150px; height: 150px; background-color: @logoBG;
+    position: relative; float: left;
+    box-shadow: -15px 15px 10px 0px rgba(0,0,0,0.1);
+    img {
+      position: absolute;
+      width: 100%;
+    }
+  }
+  .nav-section {
+    padding: 0px; margin: 0px; list-style: none;
+    .nav-item {
+      float: left;
+      padding: 0px 20px; height: 80px;
+      transition: background 0.5s;
+      transition: border 0.3s;
+      border-bottom: 0px solid @headerText;
+      a {
+        color: @headerText; text-decoration: none; margin: 0px;
+        line-height: 80px; letter-spacing: 1px; cursor: pointer;
+      }
+      &:hover {
+        background-color: @activeNav;
+        border-bottom: 5px solid @headerText;
+      }
+    }
+  }
+}
+.mobile-nav {
+  width: 0px; height: 100vh; overflow: hidden;
+  // transform: scale(0);
+  transform-origin: top center;
+  transition: 0.5s;
+  position: fixed;
+  background-color: @headerBG;
+  .exit-nav {
+    padding: 0px; margin: 0px; list-style: none;
+    .close-nav {
+      float: left;
+      padding: 0px 20px; height: 80px;
+      transition: background 0.5s;
+      transition: border 0.3s;
+      border-bottom: 0px solid @headerText;
+      a {
+        color: @headerText; text-decoration: none; margin: 0px;
+        line-height: 80px; letter-spacing: 1px; cursor: pointer;
+      }
+    }
+  }
+
+  .nav-section.mobile-section {
+    padding: 0px; text-align: center; position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0; margin: auto;
+    height: 120px; width: 200px;
+    .nav-item {
+      float: left; width: 100%; box-sizing: border-box;
+      padding: 0px 20px; height: 80px;
+      transition: background 0.5s;
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
+  &.opened {
+    width: 100%;
+  }
+}

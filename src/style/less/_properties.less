@@ -1,0 +1,796 @@
+//main: style.less
+
+
+// .property:nth-of-type(4n + 1) {background-color: #41b3a3;}
+// .property:nth-of-type(4n + 4) {background-color: #41b3a3;}
+// .property:nth-of-type(4n + 2) {background-color: #4ABDAC;}
+// .property:nth-of-type(4n + 3) {background-color: #4ABDAC;}
+
+// .property:nth-of-type(odd) {background-color: #41b3a3;}
+// .property:nth-of-type(even) {background-color: #e27d60;}
+
+@textColor: #232323;
+@buttonColor: #41b3a3;
+@buttonTextColor: white;
+
+@propertyInfoBackground: #4ABDAC;
+@propertyInfoTextColor: white;
+
+button {cursor: pointer;}
+
+.properties-header {
+  width: 100%; text-align: center; font-size: 3em;
+  margin-bottom: 75px; font-weight: 300; font-family: 'Lato';
+}
+
+.page-link-btn {
+  text-decoration: none;  color: @buttonTextColor;
+  text-align: center;
+  background-color: #41b3a3; padding: 15px 20px;
+  margin: auto;
+}
+
+.properties {
+  width: 100%;
+  margin-top: 75px;
+
+
+  .property:nth-of-type(4n + 3), .property:nth-of-type(4n + 4) {
+    .image-container {
+      float: right !important;
+    }
+    .info-container {
+      float: left !important;
+    }
+  }
+
+  .property:nth-of-type(3n + 1) {margin-left: 0;}
+  .property:nth-of-type(3n + 3) {margin-right: 0;}
+
+  .property {
+    width: 30%; height: 400px; float: left;
+    margin-left: 2.5%; margin-right: 2.5%;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    .image-container {
+      width: 100%; height: 220px;
+      img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+      }
+    }
+    .info-container {
+      width: 100%; padding: 0; box-sizing: border-box; height: 180px;
+      color: @textColor;
+      background-color: #fafafa;
+      position: relative;
+      h3 {font-weight: 400;}
+      .features {
+        width: 100%; height: 30px;
+        background-color: #41b3a3;
+        padding: 5px 0; border-bottom: 1px solid white;
+        box-sizing: content-box;
+        .feature-name {
+          width: 33%; text-align: center;
+          font-size: 0.8em;
+          line-height: 30px;
+          .fas {margin-right: 10px;}
+        }
+      }
+      .address, .price, .description, .location {
+        padding: 0 10px; font-size: 1em;
+      }
+      .address {
+        margin-top: 0; padding-top: 10px; text-align: left;
+        a {
+          text-decoration: none;
+          font-size: 1em;
+          color: @textColor;
+        }
+      }
+      .location {
+        margin: 5px auto;
+        .fas {margin-right: 10px;}
+      }
+      .description {
+        margin: 5px auto;
+        font-size: 0.8em;
+      }
+      .price {
+        position: absolute; bottom: 10px;
+        width: 100%; margin: 0;
+      }
+    }
+  }
+}
+
+.full-properties {
+  width: 100%;
+  padding-top: 250px; text-align: center;
+
+  .property {
+    width: 100%; height: 300px; margin-bottom: 100px;
+    .image-container {
+      width: 25%; height: 100%;
+      img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+      }
+    }
+    .info-container {
+      width: 72.5%; margin-left: 2.5%; padding: 10px 0px 25px 25px;
+      box-sizing: border-box; position: relative; height: 100%;
+      h3 {font-weight: 400;}
+      .address {
+        margin-top: 0; margin-bottom: 35px; text-align: left;
+        a {
+          text-decoration: none;
+          font-size: 1.5em;
+          color: @textColor;
+        }
+      }
+      .price {
+        position: absolute;
+        right: 0; top: 0;
+      }
+      .location {
+        margin: 5px auto;
+        position: absolute;
+        left: 25px; bottom: 0;
+        .fas {margin-right: 10px;}
+      }
+      .features {
+        width: 100%;
+        .feature-name {
+          width: 33%;
+          font-size: 0.9em; padding: 15px 0 25px 0;
+          .fas {
+            margin-right: 10px;
+          }
+        }
+      }
+      .link-btn {
+        text-decoration: none; position: absolute; color: @buttonTextColor;
+        background-color: #41b3a3; padding: 15px 20px;
+        right: 0; bottom: 0;
+      }
+    }
+  }
+}
+
+.full-property {
+  width: 100%;
+  padding-top: 250px;
+  .top {
+    width: 100%; float: left; overflow: visible;
+    .image-container {
+      width: 65%; float: left; height: 100%;
+      img {
+        width: 100%; height: 100%;
+      }
+    }
+    .info-container {
+      float: right; box-sizing: border-box;
+      // width: 35%;
+      // 35% of 1200px = 420px
+      width: 420px;
+      position: absolute;
+      // center it, then 1200 - 420 =  780, 780 left to align it
+      right: 0; left: 780px; margin: auto;
+      padding: 25px 2.5%;
+      background-color: @propertyInfoBackground;
+      color: @propertyInfoTextColor;
+      h3 {font-weight: 400;}
+      .address {margin-top: 0;}
+      .address, .price {
+        width: 100%; font-size: 1.4em;
+      }
+      .feature-name {
+        width: 50%; float: left;
+        font-size: 0.9em; padding: 15px 0;
+        .fas {margin-right: 10px;}
+        .feature-value {
+          width: 100%; float: left; padding: 10px 0; font-size: 1.3em;
+          text-transform: capitalize;
+        }
+      }
+      .location {
+        margin-top: 20px; float: left;
+        .fas {float: left; margin-right: 10px;}
+        span {margin-bottom: 15px; float: left;}
+      }
+      .learn-more {
+        .contact {
+          width: 100%; float: left;
+        }
+        input, textarea {
+          width: 100%; border: none; font-family: 'Lato';
+          margin: 0 auto; font-size: 1em;
+          box-sizing: border-box; padding: 15px;
+          border-bottom: 2px solid white; color: white;
+          background-color: @propertyInfoBackground;
+          outline: none;
+        }
+        input {
+        }
+        input:first-of-type {
+          border-radius: 5px 5px 0 0;
+        }
+        textarea {
+          resize: none; margin-bottom: 25px;
+        }
+        button {
+          color: @buttonColor; background-color: @buttonTextColor;
+          border: none; padding: 10px 25px; font-size: 1.1em; outline: none;
+        }
+      }
+    }
+  }
+  h3 {font-weight: 400;}
+  .address, .description, .extras, .features, .location, .more-properties {
+    width: 65%; padding-bottom: 20px; float: left;
+    hr {width: 75%; float: left;}
+
+  }
+  .address {
+     font-size: 2em; margin: 50px 0; padding-bottom: 0;
+  }
+  .description {
+    h3, p {width: 100%; float: left; box-sizing: border-box;}
+    h3 {font-size: 1.5em;}
+    p {
+      font-size: 1.2em; padding-right: 25px; line-height: 27px;
+    }
+  }
+  .extras {
+    h3 {font-size: 1.5em;}
+
+    .extra-box {
+      width: 100%; float: left; box-sizing: border-box; padding-right: 25px;
+      margin-top: 25px;
+      .extra {
+        width: 100%; float: left; height: 60px; box-sizing: border-box;
+        border-bottom: 1px solid black;
+        p {margin: 0;}
+        .extra-name, .extra-value {
+          font-size: 1.1em; float: left; box-sizing: border-box;
+          padding-left: 25px; height: 100%; line-height: 60px;
+        }
+        .extra-name {
+          font-weight: 600; text-transform: uppercase;
+          width: 30%; background-color: #4ABDAC;
+          border-right: 1px solid black; color: white;
+          &:hover {
+            background-color: #41b3a3;
+          }
+        }
+        .extra-value {
+          width: 70%; text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+
+  .properties {
+    .property {
+      width: 40%; height: 400px;
+      margin-left: 5% !important;
+      margin-right: 5% !important;
+    }
+  }
+
+  .full-property {
+    .top {
+      width: 100%; float: left;
+      .info-container {
+        width: 350px;
+        right: 0; left: 650px; margin: auto;
+      }
+    }
+  }
+
+  .full-properties {
+    .property {
+      height: 250px;
+      .info-container {
+        .link-btn {padding: 13px 18px;}
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .properties {
+    .property:nth-of-type(odd) {
+      margin-left: 0 !important;
+      margin-right: 2.5% !important;
+    }
+    .property:nth-of-type(even) {
+      margin-right: 0 !important;
+      margin-left: 2.5% !important;
+    }
+    .property {width: 47.5%;}
+  }
+
+  .full-property {
+    .top {
+      .info-container {
+        width: 280px;
+        right: 0; left: 520px; margin: auto;
+        .address {margin-bottom: 10px;}
+        .price {float: left;}
+        .address, .price {font-size: 1.2em;}
+        .feature-name {
+          .feature-value {font-size: 1.2em;}
+        }
+        .location {font-size: 1em;}
+        .learn-more {
+          input, textarea {padding: 10px;}
+          button {
+            padding: 8px 20px;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+    .address {font-size: 1.8em;}
+    .description {
+      p {font-size: 1.1em;}
+    }
+    .extras {
+      .extra-box {
+        .extra {
+          height: 60px;
+          .extra-name, .extra-value {font-size: 1em;}
+        }
+      }
+    }
+  }
+
+  .full-properties {
+    .property {
+      height: 200px;
+      .image-container {
+        width: 25%;
+      }
+      .info-container {
+        width: 67.5%;
+        .address {
+          margin-bottom: 25px;
+          a {font-size: 1.2em;}
+        }
+        .price {font-size: 1em;}
+        .location {font-size: 1em;}
+        .features {
+          .feature-name {
+            padding: 10px 0 20px 0;
+          }
+        }
+        .link-btn {padding: 10px 15px;}
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .properties {
+    .property:nth-of-type(odd) {
+      margin-left: 0 !important;
+      margin-right: 1% !important;
+    }
+    .property:nth-of-type(even) {
+      margin-right: 0 !important;
+      margin-left: 1% !important;
+    }
+
+    .property {
+      width: 49%;
+
+      .info-container {
+        .features {
+          .feature-name { font-size: 0.7em; }
+        }
+        .address, .price, .description, .location {
+          font-size: 0.9em;
+        }
+      }
+
+    }
+  }
+
+  .full-property {
+    .top {
+      .image-container {
+        width: 100%;
+      }
+      .info-container {
+        width: 100%;
+        position: static;
+        padding: 25px;
+        .address, .price {font-size: 1.6em;}
+        .price {margin-top: 10px;}
+        .feature-name {
+          width: 33%;
+          font-size: 1.1em;
+          .feature-value {font-size: 1.2em;}
+        }
+        .location {
+          font-size: 1.5em;
+          margin-bottom: 0;
+          p {font-size: 0.8em;}
+        }
+        .learn-more {
+          .contact {font-size: 1.5em;}
+        }
+      }
+    }
+    .address, .description, .extras, .features, .location, .more-properties {
+      width: 100%;
+    }
+    .address {font-size: 2em;}
+    .description {
+      p {font-size: 1.2em;}
+    }
+    .extras {
+      .extra-box {
+        .extra {
+          height: 60px;
+          .extra-name, .extra-value {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+
+  .full-properties {
+
+    .property {
+      width: 50%; padding: 0; box-sizing: border-box;
+      height: 500px;
+      margin-bottom: 75px;
+      .image-container {
+        width: 100%;
+        height: 200px;
+      }
+      .info-container {
+        width: 100%;
+        margin-left: 0%;
+        padding: 10px 0;
+        .address {
+          margin-bottom: 25px;
+          a {font-size: 1em;}
+        }
+        .price {
+          position: static;
+          margin-top: 50px;
+          float: left;
+          font-size: 1em;
+        }
+        .location {
+          margin: 0px auto;
+          position: static;
+          font-size: 0.8em;
+          padding: 10px 0 0 0;
+          float: left; width: 100%;
+        }
+        .features {
+          .feature-name {
+            width: 50%;
+            font-size: 0.8em;
+            .fas {margin-right: 5px;}
+          }
+        }
+        .link-btn {
+          position: static; float: right;
+          float: right;
+          margin-top: 50px;
+          padding: 8px 12px;
+          font-size: 0.9em;
+        }
+      }
+    }
+    .property:nth-of-type(odd) {
+      padding-left: 0; padding-right: 5px;
+    }
+    .property:nth-of-type(even) {
+      padding-left: 0; padding-left: 5px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .properties {
+    .property:nth-of-type(odd) {
+      margin-left: 15% !important;
+      margin-right: 0px !important;
+    }
+    .property:nth-of-type(even) {
+      margin-right: 0 !important;
+      margin-left: 15% !important;
+    }
+
+    .property {
+      width: 70%;
+      .info-container {
+        .features {
+          .feature-name {
+            font-size: 0.7em;
+            .fas { margin-right: 5px; display: inline;}
+          }
+        }
+        .address, .price, .description, .location {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  .full-property {
+    .top {
+      .info-container {
+        .address, .price {font-size: 1.4em;}
+        .address {margin-bottom: 5px;}
+        .feature-name {
+          font-size: 1em;
+           padding: 12px 0;
+          .feature-value {
+            font-size: 1.3em;
+            padding: 5px 0;
+          }
+        }
+        .location {
+          font-size: 1.3em;
+          padding-bottom: 0;
+          p {font-size: 0.9em;}
+        }
+        .learn-more {
+          .contact {
+            font-size: 1.3em;
+          }
+          input, textarea {font-size: 0.8em;}
+        }
+      }
+    }
+    .address, .description, .extras, .features, .location, .more-properties {
+      h3 {font-size: 1.4em; margin-bottom: 0;}
+    }
+    .address {
+       font-size: 1.8em;
+       margin-top: 50px; margin-bottom: 20px;
+    }
+    .description {
+      p {
+        font-size: 1.2em;
+        padding-right: 0px;
+      }
+    }
+    .extras {
+      .extra-box {
+        .extra {
+          height: 50px;
+          .extra-name, .extra-value {
+            padding-left: 15px;
+            height: 100%; line-height: 50px;
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+
+  .full-properties {
+    .property {
+      margin-bottom: 25px;
+      .image-container {
+        width: 100%;
+        height: 165px;
+        img {object-fit: contain;}
+      }
+      .info-container {
+        .address {
+          margin-bottom: 15px;
+
+          a {font-size: 0.9em;}
+        }
+        .price {margin-top: 35px;}
+        .location {
+          .fas {margin-right: 5px;}
+        }
+        .features {
+          .feature-name {
+            font-size: 0.7em;
+            padding: 10px 0 15px 0;
+          }
+        }
+        .link-btn {
+          margin-top: 35px;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .full-property {
+    padding-top: 200px;
+    .top {
+      .info-container {
+        .address, .price {font-size: 1.2em;}
+        .address {margin-bottom: 0px;}
+        .feature-name {
+          font-size: 0.8em;
+          .feature-value {font-size: 1.5em;}
+        }
+        .location {
+          font-size: 1em;
+          p {font-size: 1em;}
+        }
+        .learn-more {
+          .contact {font-size: 1.2em;}
+          button {
+            padding: 8px 15px;
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+    .address, .description, .extras, .features, .location, .more-properties {
+      h3 {font-size: 1.1em;}
+    }
+    .address {
+       font-size: 1.5em;
+       margin-bottom: 10px;
+    }
+    .description {
+      p {font-size: 1em;}
+    }
+    .extras {
+      .extra-box {
+        .extra {
+          .extra-name, .extra-value {
+            padding-left: 10px;
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+
+  .full-properties {
+    padding-top: 200px;
+    .property {
+      width: 80%;
+      margin: auto; margin-left: 10%;
+      height: 550px;
+      .image-container {
+        width: 100%;
+        height: auto;
+      }
+      .info-container {
+        .address {
+          a {font-size: 1em;}
+        }
+        .features {
+          .feature-name {font-size: 0.8em;}
+        }
+        .link-btn {padding: 10px 15px;}
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .properties {
+
+    .property:nth-of-type(odd) {
+      margin-left: 10% !important;
+    }
+    .property:nth-of-type(even) {
+      margin-left: 10% !important;
+    }
+
+    .property {
+      width: 80%;
+      .info-container {
+        .address, .price, .description, .location {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  .full-property {
+    .top {
+      .info-container {
+        padding: 15px;
+        .address, .price {font-size: 1.1em;}
+        .feature-name {
+          width: 50%;
+          font-size: 0.8em;
+          .feature-value {
+            font-size: 1.4em;
+          }
+        }
+        .learn-more {
+          .contact {font-size: 1.1em;}
+        }
+      }
+    }
+    .address {
+       font-size: 1.3em;
+       margin-bottom: 5px;
+    }
+    .description {
+      p {line-height: 25px;}
+    }
+    .extras {
+      .extra-box {
+        .extra {
+          .extra-name, .extra-value {
+            padding-left: 10px;
+            font-size: 0.8em;
+          }
+          .extra-name {width: 35%;}
+          .extra-value {width: 65%;}
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .properties {
+    .property:nth-of-type(odd) {
+      margin-left: 7.5% !important;
+    }
+    .property:nth-of-type(even) {
+      margin-left: 7.5% !important;
+    }
+
+    .property {width: 85%;}
+  }
+}
+
+@media (max-width: 400px) {
+  .properties {
+    .property:nth-of-type(odd) {
+      margin-left: 0% !important;
+    }
+    .property:nth-of-type(even) {
+      margin-left: 0% !important;
+    }
+
+    .property {
+      width: 100%;
+      .info-container {
+        .features {
+          .feature-name {
+            .fas { display: none;}
+          }
+        }
+        .address, .price, .description, .location {
+          font-size: 0.8em;
+        }
+        .location {
+          .fas { display: none;}
+        }
+        .price {
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .full-properties {
+    .property {
+      width: 100%; margin-left: 0%;
+    }
+  }
+}

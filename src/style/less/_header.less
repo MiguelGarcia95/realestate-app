@@ -1,0 +1,141 @@
+//main: style.less
+
+.header {
+  width: 100%; height: 100vh;
+  box-sizing: border-box; padding: 80px;
+  background-color: #41b3a3;
+  .window {
+    width: 100%; height: 100%;
+    background-image: url("@{images}/header_01.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    .window-cover {
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      position: relative;
+      h1 {
+        text-align: center; font-weight: 800; font-size: 4em;
+        color: white; position: absolute;
+        left: 0; right: 0; top: 150px; margin: auto;
+        text-shadow: 0px 5px 10px black;
+        letter-spacing: 5px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1300px) {
+  .header {
+    padding: 50px; padding-top: 80px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .header {
+    .window {
+      .window-cover {
+        h1 {font-size: 3.5em;}
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .header {
+    .window {
+      .window-cover {
+        h1 {
+          font-size: 3em;
+          top: 120px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    min-height: 700px;
+    .window {
+      .window-cover {
+        h1 {
+          font-size: 2.8em;
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    .window {
+      .window-cover {
+        h1 {
+          top: 110px;
+          font-size: 2.7em;
+          letter-spacing: 3px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    .window {
+      .window-cover {
+        h1 {
+          padding: 0 10px;
+          font-size: 2.5em;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    .window {
+      .window-cover {
+        h1 {
+          font-size: 2.2em;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    .window {
+      .window-cover {
+        h1 {
+          font-size: 2.2em;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .header {padding: 80px 0px; }
+}
+
+@media (max-width: 450px) {
+  .header {
+    .window {
+      .window-cover {
+        h1 {
+          font-size: 2em;
+          letter-spacing: 0px;
+          top: 100px;
+        }
+      }
+    }
+  }
+}
