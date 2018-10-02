@@ -21,11 +21,11 @@ class App extends Component {
           <div className="app">
             <Navbar />
             <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/listings' component={Properties} />
-              <Route exact path='/property/:id' component={SingleProperty} />
+              <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+              <Route exact path={process.env.PUBLIC_URL + '/listings'} component={Properties} />
+              <Route exact path={process.env.PUBLIC_URL + '/property/:id'} component={SingleProperty} />
               {/* <Route exact path='/results/:type' component={PropertyResults} /> */}
-              <Route exact path='/search' component={PropertyQuery} />
+              <Route exact path={process.env.PUBLIC_URL + '/search'} component={PropertyQuery} />
             </Switch>
           </div>
         </Router>

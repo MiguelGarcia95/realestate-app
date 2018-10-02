@@ -19,7 +19,7 @@ class PropertyQuery extends Component {
           <div className="container">
             <div className="full-properties">
               <h1 className='margin-top-250 properties-header'>No Matching Properties Found</h1>
-              <Link to='/'className='page-link-btn'>Try Again</Link>
+              <Link to={process.env.PUBLIC_URL + '/'}className='page-link-btn'>Try Again</Link>
             </div>
           </div>
         </div>

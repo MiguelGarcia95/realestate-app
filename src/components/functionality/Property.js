@@ -10,7 +10,7 @@ class Property extends Component {
       return (
         <div className='property'>
           <div className="image-container left">
-            <Link to={`/property/${property.id}`}><img src={property.image} alt={property.address}/></Link>
+            <Link to={process.env.PUBLIC_URL + `/property/${property.id}`}><img src={process.env.PUBLIC_URL + '/' + property.image} alt={property.address}/></Link>
           </div>
           <div className="info-container left">
             <div className="features">
@@ -29,7 +29,7 @@ class Property extends Component {
       return (
         <div className='property left'>
           <div className="image-container left">
-            <img src={property.image} alt={property.address}/>
+            <img src={process.env.PUBLIC_URL + '/' + property.image} alt={property.address}/>
           </div>
           <div className="info-container left">
             <h3 className="address "><Link to={`/property/${property.id}`}>{property.address}</Link></h3>
@@ -44,7 +44,7 @@ class Property extends Component {
             <h3 className="location"><i className="fas fa-lg fa-map-marker-alt"></i> {`${property.city}, ${property.state}`}</h3>
             {/* <p className="description">{property.description}</p> */}
             <h3 className="price"><i className="fas fa-lg fa-tags"></i> ${property.price.toLocaleString()}</h3>
-            <Link className='link-btn' to={`/property/${property.id}`}>More Info</Link>
+            <Link className='link-btn' to={process.env.PUBLIC_URL + `/property/${property.id}`}>More Info</Link>
           </div>
         </div>
       );

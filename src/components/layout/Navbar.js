@@ -19,7 +19,7 @@ class Navbar extends Component {
       <div className="navbar">
         <div className="container">
           <div className="nav-logo">
-            <Link to='/'>
+            <Link to={process.env.PUBLIC_URL + '/'}>
               <img src={Logo} alt="Houston Homes"/>
             </Link>
           </div>
@@ -30,7 +30,7 @@ class Navbar extends Component {
         <div className="mobile-nav">
           <div className="container">
             <div className="nav-logo">
-              <Link onClick={this.onHamClose} to='/'>
+              <Link onClick={this.onHamClose} to={process.env.PUBLIC_URL + '/'}>
                 <img src={Logo} alt="Houston Homes"/>
               </Link>
             </div>
@@ -38,10 +38,8 @@ class Navbar extends Component {
               <li className="close-nav"><a onClick={this.onHamClose}><i className="fas fa-2x fa-times-circle"></i></a></li>
             </ul>
             <ul className="nav-section mobile-section right">
-              <li className="nav-item"><Link onClick={this.onHamClose} to='/'>Home</Link></li>
-              <li className="nav-item"><Link onClick={this.onHamClose} to='/listings'>Properties</Link></li>
-              {/* <li className="nav-item"><Link onClick={this.onHamClose} to='/about'>About</Link></li> */}
-              {/* <li className="nav-item"><Link onClick={this.onHamClose} to='/contact'>Contact</Link></li> */}
+              <li className="nav-item"><Link onClick={this.onHamClose} to={process.env.PUBLIC_URL + '/'}>Home</Link></li>
+              <li className="nav-item"><Link onClick={this.onHamClose} to={process.env.PUBLIC_URL + '/listings'}>Properties</Link></li>
             </ul>
           </div>
         </div>

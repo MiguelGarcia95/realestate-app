@@ -22,7 +22,7 @@ class SearchMode extends Component {
     // send to redux
     this.props.postQueryToState(this.state);
     //redirect to search results
-    this.props.history.push('/search');
+    this.props.history.push(process.env.PUBLIC_URL + '/search');
   }
 
   onInputChange = (e) => {

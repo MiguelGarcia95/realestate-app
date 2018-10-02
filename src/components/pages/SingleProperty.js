@@ -18,7 +18,7 @@ class SingleProperty extends Component {
             <div className="full-property">
               <div className="top">
                 <div className="image-container">
-                  <img src={`/${property.image}`} alt=""/>
+                  <img src={process.env.PUBLIC_URL + `/${property.image}`} alt=""/>
                 </div>
                 <div className="info-container">
                   <h3 className="address">{property.address}</h3>
@@ -173,17 +173,6 @@ class SingleProperty extends Component {
                   </div>
                 </div>
               </div>
-              <div className="features">
-              </div>
-              {/* <h3>Features</h3> */}
-              {/* Add map here */}
-              {/* <div className="location">
-                <h3 className="location"><i className="fas fa-lg fa-map-marker-alt"></i> {`${property.city}, ${property.state}`}</h3>
-
-              </div>
-              <div className="more-properties">
-                <h3>Nearby Properties</h3>
-              </div> */}
             </div>
           </div>
         </div>
