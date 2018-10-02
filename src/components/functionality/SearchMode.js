@@ -41,7 +41,6 @@ class SearchMode extends Component {
               <option value="">Pick Location</option>
               <option value="any">Any</option>
               <option value="Houston">Houston, Tx</option>
-              <option value="Dallas">Dallas, Tx</option>
               <option value="Austin">Austin, Tx</option>
             </select>
           </div>
