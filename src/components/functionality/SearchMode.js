@@ -57,7 +57,7 @@ class SearchMode extends Component {
           <div className="form-group">
             <label htmlFor="rooms">No. of Bedrooms</label>
             <select onChange={this.onInputChange} name="rooms">
-              <option value={0}>___</option>
+              <option value={0}>Any</option>
               <option value={1}>1+</option>
               <option value={2}>2+</option>
               <option value={3}>3+</option>
@@ -67,8 +67,7 @@ class SearchMode extends Component {
           <div className="form-group">
             <label htmlFor="baths">No. of Bathrooms</label>
             <select onChange={this.onInputChange} name="baths">
-              <option value={0}>___</option>
-              <option value={1}>1+</option>
+              <option value={0}>Any</option>
               <option value={2}>2+</option>
               <option value={3}>3+</option>
               <option value={4}>4+</option>
@@ -77,7 +76,7 @@ class SearchMode extends Component {
           <div className="form-group">
             <label htmlFor="garages">No. of Garages</label>
             <select onChange={this.onInputChange} name="garages">
-              <option value={0}>___</option>
+              <option value={0}>Any</option>
               <option value={1}>1+</option>
               <option value={2}>2+</option>
               <option value={3}>3+</option>

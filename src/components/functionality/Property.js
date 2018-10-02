@@ -33,7 +33,7 @@ class Property extends Component {
           </div>
           <div className="info-container left">
             <h3 className="address "><Link to={`/property/${property.id}`}>{property.address}</Link></h3>
-            <div className="features">
+            <div className="features left-text">
               <div className="feature-name left"><i className="fas fa-lg fa-expand"></i><span>Area: </span> {property.floorSpace}</div>
               <div className="feature-name left"><i className="fas fa-lg fa-bed"></i><span>Bedrooms: </span> {property.numberOfBedrooms}</div>
               <div className="feature-name left"><i className="fas fa-lg fa-shower"></i><span>Bathrooms: </span> {property.numberOfBathrooms}</div>
