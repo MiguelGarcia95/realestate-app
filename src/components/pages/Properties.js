@@ -7,7 +7,8 @@ import Property from '../functionality/Property';
 
 class Properties extends Component {
   componentDidMount() {
-    this.props.getProperties()
+    this.props.getProperties();
+    window.scrollTo(0,0);
   }
 
   render() {
@@ -17,6 +18,8 @@ class Properties extends Component {
       <div className="section">
         <div className="container">
           <div className="full-properties">
+            <h3 className="properties-header">All Properties</h3>
+
             {properties.map(property => (
               <Property key={property.id} property={property} orientation='horizontal' />
             ))}

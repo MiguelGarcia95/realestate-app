@@ -9,6 +9,7 @@ import Property from '../functionality/Property';
 class Home extends Component {
   componentDidMount() {
     this.props.getProperties()
+    window.scrollTo(0,0);
   }
 
   render() {

@@ -9,6 +9,7 @@ import Property from '../functionality/Property';
 class PropertyQuery extends Component {
   componentDidMount() {
     this.props.getQueryProperties();
+    window.scrollTo(0,0);
   }
 
   render() {
@@ -29,6 +30,8 @@ class PropertyQuery extends Component {
         <div className="section">
           <div className="container">
             <div className="full-properties">
+              <h3 className="properties-header">Results</h3>
+
               {queryProperties.map(property => (
                 <Property key={property.id} property={property} orientation='horizontal' />
               ))}

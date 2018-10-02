@@ -7,6 +7,7 @@ class PropertyResults extends Component {
   componentDidMount() {
     const {type} = this.props.match.params;
     this.props.getQueryProperties(type);
+    window.scrollTo(0,0);
   }
 
   render() {

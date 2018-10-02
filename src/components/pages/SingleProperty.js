@@ -7,6 +7,7 @@ class SingleProperty extends Component {
   componentDidMount() {
     const {id} = this.props.match.params;
     this.props.getProperty(id);
+    window.scrollTo(0,0);
   }
 
   render() {
